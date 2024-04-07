@@ -1,0 +1,140 @@
+https://www.w3schools.com/sql/sql_primarykey.ASP
+
+
+
+
+https://replicate.com/tencentarc/gfpgan
+
+
+
+Facilitates the Scrum process and ensures adherence to Scrum principles and practices.
+Helps the team understand and implement Scrum effectively.
+Removes any obstacles or impediments that hinder the team's progress.
+Facilitates communication and collaboration among team members and with stakeholders.
+Guides the team in self-organization and continuous improvement.
+
+
+Responsible for defining and prioritizing the product backlog.
+Represents the stakeholders and communicates their requirements to the development team.
+Makes decisions regarding the product features and ensures the team is working on the most valuable items.
+Collaborates with the team to create a shared understanding of the product vision and goals.
+
+Cross-functional team responsible for delivering the product increment at the end of each sprint.
+Collaboratively works on the user stories and tasks committed for the sprint.
+Estimates the effort required for each item and determines the work that can be accomplished within a sprint.
+Self-organizes to determine how the work will be accomplished and takes collective responsibility for delivering the product.
+
+
+
+Attendees: Product Owner, Scrum Master, Development Team
+When: At the beginning of each sprint
+Duration: Typically 2-4 hours for a month-long sprint (timeboxed based on sprint duration)
+Recurring: Yes, happens at the start of every sprint
+Purpose: To collaboratively define the sprint goal, select user stories from the product backlog for the sprint, and create a plan for how the selected work will be accomplished.
+
+
+
+
+
+Attendees: Development Team, Scrum Master (optional), Product Owner (optional, as an observer)
+When: Daily, usually at the same time and place
+Duration: Typically 15 minutes (timeboxed)
+Recurring: Yes, happens every day throughout the sprint
+Purpose: To synchronize the team's work by sharing progress since the last stand-up, disc
+ussing planned work for the day, identifying any impediments, and ensuring align
+ment towards achieving the sprint goal.
+
+
+
+
+Attendees: Product Owner, Scrum Master, Development Team, Stakeholders (including customers, users, and management)
+When: At the end of each sprint
+Duration: Typically 1-2 hours for a month-long sprint (timeboxed based on sprint duration)
+Recurring: Yes, happens at the end of every sprint
+Purpose: To demonstrate the completed work from 
+the sprint, gather feedback from stakeholders, di
+scuss any changes to the product backlog, and determine
+ the next steps for the product.
+
+
+
+
+
+
+
+
+Attendees: Product Owner, Scrum Master, Development Team, Stakeholders (including customers, users, and management)
+When: At the end of each sprint
+Duration: Typically 1-2 hours for a month-long sprint (timeboxed based on sprint duration)
+Recurring: Yes, happens at the end of every sprint
+Purpose: To demonstrate the completed work from the sprint, gather feedback from stakeholders, discuss any changes to the product backlog, and determine the next steps for the product.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Attendees: Scrum Master, Development Team
+When: At the end of each sprint, after the Sprint Review
+Duration: Typically 1-2 hours for a month-long sprint (timeboxed based on sprint duration)
+Recurring: Yes, happens at the end of every sprint
+Purpose: To reflect on the sprint and identify what went well, what could be improved, and actionable items to enhance the team's processes and practices for the upcoming sprints.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for(int i=4;i<=N;i++)
+        {
+            long long res1=f1+f2+f3;
+            ans.push_back(res);
+           
+            f1=f2;
+            f2=f3;
+            f3=f1;
+        }
