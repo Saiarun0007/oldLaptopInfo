@@ -1,0 +1,79 @@
+import java.util.*;
+public class Main
+{
+static int maxProfit(int[] prices)
+{
+    int lsp=Integer.MAX_VALUE;
+        int pofi=0;
+        int dif=0;
+        for(int i=0;i<prices.length;i++)
+        {
+            if(prices[i]<lsp)
+            {
+                lsp=prices[i];
+            }
+            dif=prices[i]-lsp;
+            if(pofi<dif)
+            {
+                pofi=dif;
+            }
+
+        }
+        return pofi;
+}
+public static int findMaxProfit(int[] prices) {
+        int maxProfit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            // If the current price is higher than the previous one, we can make a profit
+            if (prices[i] > prices[i - 1]) {
+                // Add the profit from buying at the previous day's price and selling at the current price
+                maxProfit += prices[i] - prices[i - 1];
+            }
+        }
+        return maxProfit;
+    } 
+
+public static int stockmax(int[] prices) {
+        int maxProfit = 0;
+        int maxPrice = 0;
+
+        // Iterate through the prices in reverse order
+        for (int i = prices.length - 1; i >= 0; i--) {
+            // Update the maximum price seen so far
+            if (prices[i] > maxPrice) {
+                maxPrice = prices[i];
+            }
+            // Calculate profit based on the difference between the maximum price and current price
+            maxProfit += maxPrice - prices[i];
+        }
+        return maxProfit;
+    }   
+    static int stockMax1(int[] p,int n)
+    {
+        int maxSo=0;
+        int max=0;
+        for(int i=n-1;i>=0;i--)
+        {
+            int cu=p[i];
+            if(maxSo<cu)
+            {
+                maxSo=cu;
+                max=Math.max(Math.abs(maxSo-cu),max);
+                
+            }
+            else
+            {
+                max=maxSo-cu;
+            }
+            
+        }
+        return max;
+    }
+    public static void main(String args[]) {
+      int[] a={7,1,2,3,6,4};
+      int[] a1={1,2,100};
+		System.out.println(stockMax1(a1,a1.length));
+    }
+}
+
+3.BestTimeToBuyAndSellStock

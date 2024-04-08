@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main
+{
+    static int AssignCook(int n,int m,int greed[],int siz[])
+    {
+        int i=0;
+        int j=0;
+        int ans=0;
+        Arrays.sort(greed);
+        Arrays.sort(siz);
+        while(i<n&&j<m)
+        {
+            if(siz[j]>=greed[i])
+            {
+                ans++;
+                i++;
+                j++;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        return ans;
+    }
+	public static void main(String[] args) {
+	    int[] greed1 = {1, 2};
+        int[] sz1  = {1, 2, 3};
+        int[] greed = {1, 2, 3};
+        int[]sz  = {1, 1};
+		System.out.println(AssignCook(greed.length,sz.length,greed,sz));
+	}
+}

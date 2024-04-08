@@ -1,0 +1,78 @@
+
+
+import java.util.*;
+public class Main
+{
+    static void find(String s1,String s2)
+    {
+        int m=s1.length();
+        int n=s2.length();
+        int l[][]=new int[m+1][n+1];
+        for(int i=0;i<n+1;i++)
+        {
+            l[0][i]=0;
+        }
+        for(int i=0;i<m+1;i++)
+        {
+            l[i][0]=0;
+        }
+        for(int i=1;i<m+1;i++)
+        {
+            for(int j=1;j<n+1;j++)
+            {
+                if(s1.charAt(i-1)!=s2.charAt(j-1))
+                {
+                    l[i][j]=Math.max(l[i-1][j],l[i][j-1]);
+                }
+                else
+                {
+                    l[i][j]=l[i-1][j-1]+1;
+                }
+            }
+        }
+        for(int i=0;i<m+1;i++)
+        {
+            for(int j=0;j<n+1;j++)
+            {
+                System.out.print(l[i][j]+" ");
+            }
+            System.out.println();
+        }
+         StringBuilder lcs = new StringBuilder();
+    int i = m, j = n;
+    while (i > 0 && j > 0) {
+        if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+            lcs.insert(0, s1.charAt(i - 1)); // prepend current character to LCS string
+            i--;
+            j--;
+        } else if (l[i - 1][j] > l[i][j - 1]) {
+            i--;
+        } else {
+            j--;
+        }
+    }
+    System.out.println(lcs.toString());
+    }
+    static int Lcs(String s1,String s2,int m,int n)
+    {
+        if(m==0||n==0)
+        {
+            return 0;
+            
+        }
+        if(s1.charAt(m-1)==s2.charAt(n-1))
+        {
+            return Lcs(s1,s2,m-1,n-1)+1;
+        }
+        return Math.max(Lcs(s1,s2,m,n-1),Lcs(s1,s2,m-1,n));
+    }
+	public static void main(String[] args) {
+	    String s1,s2;
+	    s1="ABCBDAB";
+	    s2="BDCABA";
+	    find(s1,s2);
+	    
+		System.out.println(Lcs(s1,s2,s1.length(),s2.length()));
+	}
+}
+

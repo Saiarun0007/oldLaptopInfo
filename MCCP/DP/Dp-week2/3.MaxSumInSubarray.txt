@@ -1,0 +1,46 @@
+import java.util.*;
+public class Main
+{
+    static void find(int a[],int n)
+    {
+        int max=a[0];
+        int cmax=a[0];
+        for(int i=1;i<n;i++)
+        {
+            int c=a[i];
+            cmax=Math.max(c,c+cmax);
+            max=Math.max(max,cmax);
+        }
+        System.out.println(max);
+    }
+    static void maxSubArray(int a[],int n)
+    {
+        int maxSo = a[0];
+        int maxC = a[0];
+        int st = 0, en = 0, s = 0;
+ 
+        for (int i = 0; i < n; i++) {
+            maxC+= a[i];
+ 
+            if (maxSo < maxC) {
+                maxSo = maxC;
+                st = s;
+                en = i;
+            }
+ 
+            if (maxC < 0) {
+                maxC = 0;
+                s = i + 1;
+            }
+        }
+        System.out.println(maxSo);
+ 
+    }
+	public static void main(String[] args) {
+	    int[] a={-2,-3,4,-1,-2,1,5,-3};
+	    find(a,a.length);
+	    maxSubArray(a,a.length);
+	    
+		System.out.println("Hello World");
+	}
+}

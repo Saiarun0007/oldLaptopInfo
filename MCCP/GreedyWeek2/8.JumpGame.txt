@@ -1,0 +1,44 @@
+ Given an positive integer N and a list of N integers A[]. Each element in the array denotes the maximum length of jump you can cover. Find out if you can make it to the last index if you start at the first index of the list.
+
+
+
+Given an positive integer N and a list of N integers A[]. Each element in the array denotes the maximum length of jump you can cover. Find out if you can make it to the last index if you start at the first index of the list.
+
+import java.util.*;
+//Jump game
+public class Main
+{
+    static boolean JumpGame(int[] a,int n)
+    {
+        int last=n-1;
+        int i=n-1;
+        while(i>-1)
+        {
+            if(a[i]+i>=last)
+            {
+                last=i;
+               
+            }
+             i--;
+            
+        }
+        if(last==0)
+            {
+                return true;
+            }
+            return false;
+    }
+	public static void main(String[] args) {
+	    int[] a={1, 2, 0, 3, 0, 0};
+	    int[] a1={1,0,3};
+	    if(JumpGame(a1,a1.length))
+	    {
+	        System.out.println("Jump Game is possiable");
+	    }
+	    else
+	    {
+	        System.out.println("Jump Game is Not possiable");
+	    }
+		
+	}
+}

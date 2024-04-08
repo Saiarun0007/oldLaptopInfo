@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main
+{
+    
+    static int stockMax(int[] p,int n)
+    {
+        int maxSo=0;
+        int sum=0;
+        for(int i=n-1;i>=0;i--)
+        {
+            int cu=p[i];
+            if(maxSo<p[i])
+            {
+                maxSo=p[i];
+                
+            }
+            else
+            {
+                sum=sum+maxSo-p[i];
+            }
+            
+        }
+        return sum;
+    }
+    public static void main(String args[]) {
+      int[] a={7,1,2,3,6,4};
+      int[] a1={1,2,100};
+		System.out.println(stockMax(a1,a1.length));
+    }
+}

@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main {
+    static int minProdOf2Arr(int a[], int b[], int n) {
+        Arrays.sort(a);
+        Arrays.sort(b);
+        reverse(b);
+        int min = 0;
+        for(int i=0;i<n;i++)
+        {
+            min=min+(a[i]*b[i]);
+        }
+        return min;
+    }
+    public static void reverse(int[] array)
+    {
+        int n = array.length;
+        for (int i = 0; i < n / 2; i++) 
+        {
+            int temp = array[i];
+            array[i] = array[n - i - 1];
+            array[n - i - 1] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a={7,5,4,1};
+        int[] b={3,6,9,17};
+        System.out.println(minProdOf2Arr(a,b,a.length));
+    }
+}

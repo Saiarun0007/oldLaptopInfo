@@ -1,0 +1,41 @@
+import java.util.*;
+public class MyClass {
+    static void find(int[] child,int n)
+    {
+        ArrayList<Integer> l1=new ArrayList<>();
+        int[] l={1,1,1,1};
+        int[] r={1,1,1,1};
+        int s=child[0];
+        for(int i=1;i<n;i++)
+        {
+            if(s<child[i])
+            {
+                l[i]++;
+                s=child[i];
+            }
+        }
+        int e=child[n-1];
+        for(int i=n-2;i>=0;i--)
+        {
+            if(e<child[i])
+            {
+                r[i]=r[i+1]+1;
+                e=child[i];
+            }
+        }
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            int x=Math.max(l[i],r[i]);
+            l1.add(x);
+            sum=sum+x;
+        }
+        System.out.println(l1);
+        System.out.println(sum);
+    }
+    public static void main(String args[]) {
+      int[] a={1,5,2,1};
+	    find(a,a.length);
+		
+    }
+}

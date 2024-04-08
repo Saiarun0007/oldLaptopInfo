@@ -1,0 +1,73 @@
+Q)
+You are an owner of lemonade island, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by given array bills[]). Each customer will only buy one lemonade and pay with either a $5, $10, or $20 bill. You must provide the correct change to each customer so that the net transaction is that the customer pays $5.
+
+NOTE: At first, you do not have any bill to provide changes with. You can provide changes from the bills that you get from the previous customers.
+
+Given an integer array bills of size N where bills [ i ] is the bill the ith customer pays, return true if you can provide every customer with the correct change, or false otherwise.
+
+Program:
+
+import java.util.*;
+public class Main
+{
+    static boolean findChange(int a[],int n)
+    {
+        if(a[0]==10||a[0]==20)
+        {
+            return false;
+        }
+        int f=0;
+        int te=0;
+        int to=0;
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]==5)
+            {
+                f++;
+            }
+            else if(a[i]==10)
+            {
+                te++;
+                if(f>=1)
+                {
+                    f--;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if(a[i]==20)
+            {
+                to++;
+                if(te>=1 && f>=1)
+                {
+                    f--;
+                    te--;
+                }
+                else if(f>=3)
+                {
+                    f=f-3;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+	public static void main(String[] args) {
+	    int[] a1={5,5,5,10,20};
+	    int[] a={5,10,10,20};
+	    if(findChange(a,a.length))
+	    {
+	       System.out.println("change can be give with the tansections"); 
+	    }
+	    else
+	    {
+	        System.out.println("No change");
+	    }
+		
+	}
+}

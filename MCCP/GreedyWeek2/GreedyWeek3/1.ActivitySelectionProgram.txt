@@ -1,0 +1,66 @@
+import java.util.*;
+class Pair1
+{
+    int st;
+    int en;
+    Pair1()
+    {
+        
+    }
+    Pair1(int x,int y)
+    {
+        st=x;
+        en=y;
+    }
+}
+
+class Compara {
+    static void Compara(Pair1 a[], int n) {
+        Arrays.sort(a, new Comparator<Pair1>() {
+            @Override
+            public int compare(Pair1 a1, Pair1 a2) {
+                
+                return a1.en - a2.en;
+            }
+        });
+    }
+}
+public class Main
+{
+    static void noOfAct(int[] s,int[] e,int n)
+    {
+        Pair1[] np=new Pair1[n];
+        for(int i=0;i<n;i++)
+        {
+            np[i]=new Pair1(s[i],e[i]);
+        }
+        System.out.println("the elements are :");
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("("+np[i].st+" "+np[i].en+")");
+        }
+        
+        Compara c1=new Compara();
+        c1.Compara(np,n);
+         int i = 0;
+        int ans = 1; 
+        System.out.println();
+        System.out.println("(" + np[i].st + " " + np[i].en + ")");
+        for (int j = 1; j < n; j++) {
+            if (np[j].st >= np[i].en) {
+                System.out.println("(" + np[j].st + " " + np[j].en + ")");
+                i = j;
+                ans++;
+            }
+        }
+        System.out.println("Maximum number of non-overlapping activities: " + ans);
+    }
+	public static void main(String[] args) {
+	    int[] start = {1, 3, 2, 5};
+	    int[] end = {2, 4, 3, 6};
+	    int[] start1  =  {1, 3, 0, 5, 8, 5};
+	    int[] end1 =     {2, 4, 6, 7, 9, 9};
+	    noOfAct(start1,end1,end1.length);
+		
+	}
+}

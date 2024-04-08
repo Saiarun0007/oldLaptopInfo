@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main
+{
+    static int findRem(int[] a,int n)
+    {
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+        for(int i=0;i<n;i++)
+        {
+            pq.add(a[i]);
+        }
+        while(pq.size()>1)
+        {
+            int x=pq.remove();
+            int y=pq.remove();
+            if(x!=y)
+            {
+                pq.add(x-y);
+            }
+            
+        }
+        if(pq.size()==0)
+        {
+            return 0;
+            
+        }
+        return pq.remove();
+        
+    }
+	public static void main(String[] args) {
+	    int[] a={1 ,3 ,3 ,6 ,4 ,8};
+	    int[] b={9 ,2 ,1 ,7 ,8};
+	    
+		System.out.println(findRem(a,a.length));
+		System.out.println(findRem(b,b.length));
+	}
+}

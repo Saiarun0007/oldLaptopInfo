@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main
+{
+    static int maxLenChain(int[][] a,int n)
+    {
+        Arrays.sort(a,(x,y)->x[1]-y[1]);
+        int l=a[0][1];
+        int ans=1;
+        
+        System.out.println();
+        for(int i=1;i<n;i++)
+        {
+            if(l<=a[i][0])
+            {
+                ans++;
+                l=a[i][1];
+                
+            }
+        }
+        return ans;
+    }
+	public static void main(String[] args) {
+	    int[][] a={ {5, 24}, {39, 60},{15, 28}, {27, 40}, {50, 90} };
+	    
+		System.out.println(maxLenChain(a,a.length));
+	}
+}

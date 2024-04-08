@@ -1,0 +1,55 @@
+import java.util.*;
+
+class Pair1 {
+    int st;
+    int en;
+
+    Pair1() {}
+
+    Pair1(int x, int y) {
+        st = x;
+        en = y;
+    }
+}
+
+class Compara {
+    static void Compara(Pair1 a[], int n) {
+        Arrays.sort(a, new Comparator<Pair1>() {
+            @Override
+            public int compare(Pair1 a1, Pair1 a2) {
+                return a1.en - a2.en;
+            }
+        });
+    }
+}
+
+public class Main {
+    static void maxNoOFMeets(int[] s, int[] e, int n) {
+        Pair1[] np = new Pair1[n];
+        for (int i = 0; i < n; i++) {
+            np[i] = new Pair1(s[i], e[i]);
+        }
+        
+        Compara c1 = new Compara();
+        c1.Compara(np, n);
+
+        int maxA=1;
+        int las=np[0].en;
+        for(int i=1;i<n;i++)
+        {
+            if(np[i].st>las)
+            {
+                maxA++;
+                las=np[i].en;
+            }
+        }
+        //return maxA;
+        System.out.println("Maximum number of meeting helded in a room :" + maxA);
+    }
+
+    public static void main(String[] args) {
+        int[] start1 = {1, 3, 0, 5, 8, 5};
+        int[] end1 = {2, 4, 6, 7, 9, 9};
+        maxNoOFMeets(start1, end1, end1.length);
+    }
+}
